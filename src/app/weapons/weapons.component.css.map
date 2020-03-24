@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,2CAA2C;AAE3C,KAAM;EACJ,KAAK,EAAE,IAAI;;AAGb,eAAgB;EACd,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,IAAI;;AAGb,MAAO;EACL,KAAK,EAAE,GAAG",
+"sources": ["weapons.component.scss"],
+"names": [],
+"file": "weapons.component.css"
+}

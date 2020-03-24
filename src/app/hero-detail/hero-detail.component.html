@@ -1,0 +1,71 @@
+<div *ngIf="hero">
+  <h2 *ngIf="weapon; else elseBlock">{{hero.name | uppercase }} équipé de {{ weapon.name }} </h2>
+  <ng-template #elseBlock>
+    <h2>{{hero.name | uppercase }}</h2>
+  </ng-template>
+  <div><span>id: </span>{{hero.id}}</div>
+  <h3>{{hero.hp + hero.attack + hero.damage + hero.agility }}/{{ hero.points }}</h3>
+  <div>
+    <mat-list>
+      <mat-list-item>
+        <mat-form-field>
+          <input matInput [(ngModel)]="hero.name" placeholder="Name"/>
+        </mat-form-field>
+      </mat-list-item>
+
+      <mat-list-item>
+        <p>HP <span><mat-icon>favorite</mat-icon></span> :</p>
+        <button color="primary" mat-icon-button aria-label="Remove stat" (click)="addStat('remove', 'hp')">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <p>{{ hero.hp }}</p>
+        <button color="primary" mat-icon-button aria-label="Add stat" (click)="addStat('add', 'hp')">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <p>Attack <span><mat-icon>fitness_center</mat-icon></span> :</p>
+        <button color="primary" mat-icon-button aria-label="Remove stat" (click)="addStat('remove', 'attack')">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <p>{{ hero.attack }}</p>
+        <button color="primary" mat-icon-button aria-label="Add stat" (click)="addStat('add', 'attack')">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <p>Damage <span><mat-icon>sports_mma</mat-icon></span> :</p>
+        <button color="primary" mat-icon-button aria-label="Remove stat" (click)="addStat('remove', 'damage')">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <p>{{ hero.damage }}</p>
+        <button color="primary" mat-icon-button aria-label="Add stat" (click)="addStat('add', 'damage')">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <p>Agility <span><mat-icon>accessibility_new</mat-icon></span> :</p>
+        <button color="primary" mat-icon-button aria-label="Remove stat" (click)="addStat('remove', 'agility')">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+        <p>{{ hero.agility }}</p>
+        <button color="primary" mat-icon-button aria-label="Add stat" (click)="addStat('add', 'agility')">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+
+  </div>
+
+  <select name="weapons" [(ngModel)]="hero.weaponId" (change)="onWeaponUpdate()" >
+    <option *ngFor="let weapon of weapons" [ngValue]="weapon" value="{{ weapon.id }}">{{ weapon.name }}</option>
+  </select>
+
+  <button (click)="reset()">Reset points</button>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

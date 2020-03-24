@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item color="primary" routerLink="/home">
+        <i class="material-icons">home</i>Accueil
+      </a><a mat-list-item color="primary" routerLink="/home">
+      <i class="material-icons">person_add</i>Création de Héro
+    </a>
+      <a mat-list-item color="primary" routerLink="/heroes">
+        <i class="material-icons">people</i>Héros
+      </a>
+      <a mat-list-item color="primary" routerLink="/weapons">
+        <i class="material-icons">sports_cricket</i>Armes
+      </a>
+      <a mat-list-item color="primary" routerLink="/shop">
+        <i class="material-icons">shop</i>Boutique
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

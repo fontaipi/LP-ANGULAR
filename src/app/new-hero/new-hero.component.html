@@ -1,0 +1,9 @@
+<div>
+  <h2>Créer un héro :</h2>
+  <mat-form-field>
+    <input matInput [(ngModel)]="heroName" placeholder="Name"/>
+  </mat-form-field>
+  <p>{{ creationString }}</p>
+  <button (click)="goBack()">Go back</button>
+  <button (click)="save()">Save</button>
+</div>

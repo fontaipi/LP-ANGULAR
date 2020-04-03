@@ -122,5 +122,9 @@ export class HeroDetailComponent implements OnInit {
   save() {
     this.heroService.updateHero(this.hero);
   }
+  delete() {
+    this.heroService.deleteHero(this.hero.id);
+  }
+
 
 }

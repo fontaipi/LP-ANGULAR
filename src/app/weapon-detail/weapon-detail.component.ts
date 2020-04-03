@@ -103,4 +103,8 @@ export class WeaponDetailComponent implements OnInit {
   save() {
     this.weaponService.updateWeapon(this.weapon);
   }
+
+  delete() {
+    this.weaponService.deleteWeapon(this.weapon.id);
+  }
 }
